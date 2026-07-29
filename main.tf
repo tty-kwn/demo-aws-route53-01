@@ -42,9 +42,9 @@ resource "aws_route53_zone" "demo-dns01-zone" {
 ############################
 
 # Vault Agent (EC2-00) の公開IPを指すAレコード
-resource "aws_route53_record" "vault-agent" {
+resource "aws_route53_record" "vault-client" {
   zone_id = aws_route53_zone.demo-dns01-zone.zone_id
-  name    = "vault-agent.${var.domain_name}"
+  name    = "vault-client.${var.domain_name}"
   type    = "A"
   ttl     = 300
   records = [var.vault_agent_public_ip]
