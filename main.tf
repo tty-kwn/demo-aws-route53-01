@@ -47,7 +47,7 @@ resource "aws_route53_record" "vault-client" {
   name    = "vault-client.${var.domain_name}"
   type    = "A"
   ttl     = 300
-  records = [var.vault_agent_public_ip]
+  records = [var.vault_client_public_ip]
 }
 
 # Vault Server (EC2-01) のプライベートIPを指すAレコード
