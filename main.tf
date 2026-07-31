@@ -31,7 +31,8 @@ provider "aws" {
 resource "aws_route53_zone" "demo-dns01-zone" {
   name    = var.domain_name
   comment = "Hosted zone for ${local.project}"
-
+  vpc {
+    vpc_id = varaws_vpc.primary.id
   tags = {
     Name = "demo-dns01-zone"
   }
