@@ -9,6 +9,13 @@ variable "domain_name" {
   type        = string
 }
 
+variable "aws_vpc_id" {
+  description = "aws vpc id"
+  type        = string
+}
+
+
+
 variable "vault_client_public_ip" {
   description = "Vault Client EC2 のパブリックIP"
   type        = string
