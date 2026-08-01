@@ -14,14 +14,12 @@ variable "aws_vpc_id" {
   type        = string
 }
 
-
-
-variable "vault_client_public_ip" {
-  description = "Vault Client EC2 のパブリックIP"
+variable "client_public_ip" {
+  description = "Client EC2 のパブリックIP"
   type        = string
 }
 
-variable "vault_server_private_ip" {
-  description = "Vault Server EC2 のプライベートIP"
+variable "server_private_ip" {
+  description = "Server EC2 のプライベートIP"
   type        = string
 }
