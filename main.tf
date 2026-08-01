@@ -51,7 +51,7 @@ resource "aws_route53_record" "client" {
   ttl     = 300
   records = [var.client_public_ip]
 }
-
+/*
 # Vault Server (EC2-01) のプライベートIPを指すAレコード
 resource "aws_route53_record" "server" {
   zone_id = aws_route53_zone.demo-dns01-zone.zone_id
@@ -60,4 +60,4 @@ resource "aws_route53_record" "server" {
   ttl     = 300
   records = [var.server_private_ip]
 }
-
+*/
