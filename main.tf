@@ -31,7 +31,7 @@ provider "aws" {
 
 # Vault Agent (EC2-00) の公開IPを指すAレコード
 resource "aws_route53_record" "client" {
-  zone_id = aws_route53_zone.demo-dns01-zone.zone_id
+  zone_id = var.host_zone_id
   name    = "client.${var.domain_name}"
   type    = "A"
   ttl     = 300
@@ -40,7 +40,7 @@ resource "aws_route53_record" "client" {
 /*
 # Vault Server (EC2-01) のプライベートIPを指すAレコード
 resource "aws_route53_record" "server" {
-  zone_id = aws_route53_zone.demo-dns01-zone.zone_id
+  zone_id = var.host_zone_id
   name    = "vault.${var.domain_name}"
   type    = "A"
   ttl     = 300
