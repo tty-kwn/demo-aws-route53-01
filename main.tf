@@ -24,20 +24,6 @@ provider "aws" {
   }
 }
 
-############################
-# Route53 Hosted Zone
-############################
-
-resource "aws_route53_zone" "demo-dns01-zone" {
-  name    = var.domain_name
-  comment = "Hosted zone for ${local.project}"
-  vpc {
-    vpc_id = var.aws_vpc_id
-  }
-  tags = {
-    Name = "demo-dns01-zone"
-  }
-}
 
 ############################
 # A Records
