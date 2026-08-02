@@ -24,7 +24,7 @@ variable "server_private_ip" {
   type        = string
 }
 
-variable "host_zone_id" {
+variable "hosted_zone_id" {
   description = "Route53 Hostzone ID"
   type        = string
 }
