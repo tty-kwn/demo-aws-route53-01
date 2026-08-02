@@ -23,3 +23,8 @@ variable "server_private_ip" {
   description = "Server EC2 のプライベートIP"
   type        = string
 }
+
+variable "host_zone_id" {
+  description = "Route53 Hostzone ID"
+  type        = string
+}
