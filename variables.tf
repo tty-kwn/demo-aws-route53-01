@@ -18,7 +18,6 @@ variable "allowed_vault_cidr" {
 variable "ec2_ami_id" {
   description = "AMI ID for EC2 instances"
   type        = string
-  default     = "ami-0244fcbfd244dd3fa"
 }
 
 variable "ec2_instance_type" {
@@ -30,7 +29,6 @@ variable "ec2_instance_type" {
 variable "ec2_key_name" {
   description = "EC2 key pair name"
   type        = string
-  default     = "vault-poc-keypair"
 }
 
 variable "domain_name" {
