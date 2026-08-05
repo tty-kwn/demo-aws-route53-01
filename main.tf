@@ -58,3 +58,13 @@ resource "aws_route53_record" "server" {
   records = [aws_instance.base01-ec2-01.private_ip]
 }
 */
+
+
+
+resource "aws_route53_record" "server" {
+  zone_id = aws_route53_zone.demo-dns01-zone.zone_id
+  name    = "${fqdn}"
+  type    = "${dns_type}"
+  ttl     = 300
+  records = [${dns_ip_address}]
+}
