@@ -31,9 +31,6 @@ provider "aws" {
 resource "aws_route53_zone" "demo-dns01-zone" {
   name    = var.domain_name
   comment = "Hosted zone for ${local.project}"
-  vpc {
-    vpc_id = aws_vpc.base01-vpc.id
-  }
   tags = {
     Name = "demo-dns01-zone"
   }
@@ -49,7 +46,7 @@ resource "aws_route53_record" "client" {
   name    = "client.${var.domain_name}"
   type    = "A"
   ttl     = 300
-  records = [aws_instance.base01-ec2-00.public_ip]
+  records = ["10.0.0.1"]
 }
 /*
 # Server (EC2-01) のプライベートIPを指すAレコード
