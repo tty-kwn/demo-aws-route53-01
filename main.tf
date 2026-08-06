@@ -77,3 +77,12 @@ resource "aws_route53_record" "client3_demo_home" {
   ttl     = 300
   records = ["10.0.0.3"]
 }
+
+
+resource "aws_route53_record" "client4_demo_home" {
+  zone_id = aws_route53_zone.demo-dns01-zone.zone_id
+  name    = "client4.demo.home"
+  type    = "A"
+  ttl     = 300
+  records = ["10.0.0.4"]
+}
